@@ -1,20 +1,28 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+🍔 Mr Yummy – Batna Website
 
-# Run and deploy your AI Studio app
+This repository contains the official Mr Yummy – Batna restaurant website.
+The project showcases the brand identity, menu, and contact information through a modern, responsive, and user-friendly design.
 
-This contains everything you need to run your app locally.
+✨ Features
 
-View your app in AI Studio: https://ai.studio/apps/temp/1
+Clean and attractive UI
 
-## Run Locally
+Responsive layout (mobile & desktop)
 
-**Prerequisites:**  Node.js
+Menu presentation
 
+Social media & contact links
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Fast and lightweight website
+
+🛠️ Technologies Used
+
+HTML
+
+CSS
+
+JavaScript
+
+🎯 Purpose
+
+The goal of this project is to provide an online presence for Mr Yummy, making it easy for customers to discover the menu, learn about the brand, and get in touch.
