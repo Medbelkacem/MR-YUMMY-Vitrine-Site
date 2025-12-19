@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MR Yummy - Batna's Flavor Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Poppins', sans-serif;
+        scroll-behavior: smooth;
+        background-color: #ffffff;
+      }
+      .red-gradient-overlay {
+        background: linear-gradient(135deg, rgba(220, 38, 38, 0.7) 0%, rgba(255, 255, 255, 0.3) 100%);
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fadeIn { animation: fadeIn 0.8s ease-out; }
+      .scrollbar-hide::-webkit-scrollbar { display: none; }
+      .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+      .section { scroll-margin-top: 80px; }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+<!-- NAVBAR -->
+<nav class="sticky top-0 z-50 bg-red-600 text-white shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center space-x-3">
+        <div class="bg-white p-1 rounded-full overflow-hidden w-14 h-14 border-2 border-yellow-400">
+          <img src="assets/logo.jpg" alt="MR Yummy Logo" class="w-full h-full object-cover rounded-full" onerror="this.src='https://picsum.photos/id/102/100/100'">
+        </div>
+        <span class="text-2xl font-black tracking-tighter">MR <span class="text-yellow-400">YUMMY</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="font-bold hover:text-yellow-400 transition-colors">HOME</a>
+        <a href="#menu" class="font-bold hover:text-yellow-400 transition-colors">MENU</a>
+        <a href="#about" class="font-bold hover:text-yellow-400 transition-colors">ABOUT</a>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="hidden lg:flex items-center space-x-4">
+        <div class="flex items-center space-x-3 mr-4">
+          <a href="https://www.instagram.com/mr_yummy_batna/" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
+            <i class="fab fa-instagram text-2xl"></i>
+          </a>
+          <a href="https://www.facebook.com/mryummybatna/" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
+            <i class="fab fa-facebook text-2xl"></i>
+          </a>
+          <a href="https://wa.me/213676818999" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
+            <i class="fab fa-whatsapp text-2xl"></i>
+          </a>
+        </div>
+        <div class="flex flex-col items-end">
+          <span class="text-[10px] opacity-70">Order Now</span>
+          <span class="text-sm font-bold">+213 676 81 89 99</span>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button onclick="toggleMobileMenu()" class="text-white hover:text-yellow-400">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-red-700 px-4 pt-2 pb-6 space-y-2">
+      <a href="#home" onclick="toggleMobileMenu()" class="block py-2 text-lg font-bold">HOME</a>
+      <a href="#menu" onclick="toggleMobileMenu()" class="block py-2 text-lg font-bold">MENU</a>
+      <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-lg font-bold">ABOUT</a>
+      <div class="flex space-x-4 pt-4 border-t border-red-500">
+        <a href="https://www.facebook.com/mryummybatna/" class="text-2xl hover:text-yellow-400"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/mr_yummy_batna/" class="text-2xl hover:text-yellow-400"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/213676818999" class="text-2xl hover:text-yellow-400"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="home" class="relative h-[80vh] w-full flex items-center justify-center overflow-hidden">
+  <video autoplay loop muted playsinline class="hero-video absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover">
+    <source src="assets/vd.mp4" type="video/mp4">
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-frying-burgers-on-a-hot-griddle-close-up-16347-large.mp4" type="video/mp4">
+  </video>
+  
+  <div class="absolute inset-0 z-10 red-gradient-overlay opacity-60"></div>
+  
+  <div class="relative z-20 text-center px-6 max-w-4xl mx-auto animate-fadeIn">
+    <h1 class="text-5xl md:text-7xl font-black text-white drop-shadow-2xl mb-6">
+      WELCOME TO <span class="text-yellow-400">MR YUMMY</span>
+    </h1>
+    <p class="text-xl md:text-2xl text-white font-medium mb-10 leading-relaxed drop-shadow-md">
+      Batna's go-to spot for juicy burgers, tasty tacos, and bold flavors. 
+      Fast, fresh, and full of fun in every bite! 🍔✨
+    </p>
+    <a href="#menu" class="inline-block bg-yellow-400 text-red-700 hover:bg-white hover:text-red-600 transition-all duration-300 font-bold px-10 py-4 rounded-full text-xl shadow-xl transform hover:scale-105">
+      DISCOVER OUR MENU
+    </a>
+  </div>
+</section>
+
+<!-- GALLERY SECTION -->
+<section class="py-16 bg-white">
+  <div class="max-w-[1600px] mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-black text-red-600 uppercase">Our Mouth-Watering Bites</h2>
+      <div class="w-24 h-1 bg-yellow-400 mx-auto mt-4"></div>
+    </div>
+    
+    <div class="flex justify-center">
+      <div onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})" class="relative w-full max-w-[1100px] rounded-lg overflow-hidden cursor-pointer">
+        <!-- Featured images: showing available gallery images (5-7) -->
+        <div class="featured-row">
+          <img src="/assets/5.jpg" alt="5" onerror="this.src='assets/5.jpg'" />
+       
+        </div>
+        <div class="absolute inset-0 bg-red-600/20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+          <span class="text-white font-bold bg-red-600/80 px-3 py-1 rounded text-sm">VIEW MENU</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU SECTION -->
+<section id="menu" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <h1 class="text-5xl font-black text-center text-red-600 mb-16 uppercase">Our Full <span class="text-yellow-400">Menu</span></h1>
+
+    <!-- BURGERS -->
+    <div class="mb-20">
+      <div class="flex items-center space-x-4 mb-8">
+        <h2 class="text-3xl font-black text-gray-900">🍔 NOS BURGERS</h2>
+        <div class="flex-1 h-px bg-yellow-400"></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">SMASH BURGER</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">390 DA</span>
+          </div>
+          <button onclick="orderNow('SMASH BURGER')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all">
+            <i class="fab fa-whatsapp"></i> ORDER NOW
+          </button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">DOUBLE SMASH (150g)</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">490 DA</span>
+          </div>
+          <button onclick="orderNow('DOUBLE SMASH (150g)')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all">
+            <i class="fab fa-whatsapp"></i> ORDER NOW
+          </button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">ZINGER</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">400 DA</span>
+          </div>
+          <button onclick="orderNow('ZINGER')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all">
+            <i class="fab fa-whatsapp"></i> ORDER NOW
+          </button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">GRILLED CHICKEN</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">350 DA</span>
+          </div>
+          <button onclick="orderNow('GRILLED CHICKEN')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all">
+            <i class="fab fa-whatsapp"></i> ORDER NOW
+          </button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">SMOKY</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">490 DA</span>
+          </div>
+          <button onclick="orderNow('SMOKY')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all">
+            <i class="fab fa-whatsapp"></i> ORDER NOW
+          </button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">YUMMY</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">490 DA</span>
+          </div>
+          <button onclick="orderNow('YUMMY')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all">
+            <i class="fab fa-whatsapp"></i> ORDER NOW
+          </button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">TONER</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">450 DA</span>
+          </div>
+          <button onclick="orderNow('TONER')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all">
+            <i class="fab fa-whatsapp"></i> ORDER NOW
+          </button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">CHILI LIME</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">400 DA</span>
+          </div>
+          <button onclick="orderNow('CHILI LIME')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all">
+            <i class="fab fa-whatsapp"></i> ORDER NOW
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOX MEALS -->
+    <div class="mb-20">
+      <div class="flex items-center space-x-4 mb-8">
+        <h2 class="text-3xl font-black text-gray-900">📦 BOX MEALS</h2>
+        <div class="flex-1 h-px bg-yellow-400"></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">CHEESE BOX</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">790 DA</span>
+          </div>
+          <button onclick="orderNow('CHEESE BOX')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all">
+            <i class="fab fa-whatsapp"></i> ORDER NOW
+          </button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">BURGER FRIES</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">590 DA</span>
+          </div>
+          <button onclick="orderNow('BURGER FRIES')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all">
+            <i class="fab fa-whatsapp"></i> ORDER NOW
+          </button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">ZINGER BOX</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">790 DA</span>
+          </div>
+          <button onclick="orderNow('ZINGER BOX')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all">
+            <i class="fab fa-whatsapp"></i> ORDER NOW
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SNACKS (SAMPLE) -->
+    <div class="mb-20">
+      <div class="flex items-center space-x-4 mb-8">
+        <h2 class="text-3xl font-black text-gray-900">🍟 SNACKS</h2>
+        <div class="flex-1 h-px bg-yellow-400"></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">CHEESE FRIES</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">250 DA</span>
+          </div>
+          <button onclick="orderNow('CHEESE FRIES')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all">
+            <i class="fab fa-whatsapp"></i> ORDER NOW
+          </button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">CHILI LIME FRIES</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">550 DA</span>
+          </div>
+          <button onclick="orderNow('CHILI LIME FRIES')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all">
+            <i class="fab fa-whatsapp"></i> ORDER NOW
+          </button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">CHICKEN POPCORN</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">490 DA</span>
+          </div>
+          <button onclick="orderNow('CHICKEN POPCORN')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all">
+            <i class="fab fa-whatsapp"></i> ORDER NOW
+          </button>
+        </div>
+      </div>
+      <p class="text-center text-gray-600 mt-6 font-semibold">Full menu listed below.</p>
+    </div>
+
+    <!-- TACOS -->
+    <div class="mb-20">
+      <div class="flex items-center space-x-4 mb-8">
+        <h2 class="text-3xl font-black text-gray-900">🌮 TACOS (Simple / Double)</h2>
+        <div class="flex-1 h-px bg-yellow-400"></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Each taco card shows name, price and order button -->
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">POULET</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">450 / 550 DA</span>
+          </div>
+          <button onclick="orderNow('POULET TACO')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">VIANDE</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">450 / 550 DA</span>
+          </div>
+          <button onclick="orderNow('VIANDE TACO')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">MERGUEZ</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">450 / 550 DA</span>
+          </div>
+          <button onclick="orderNow('MERGUEZ TACO')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">TENDERS</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">450 / 550 DA</span>
+          </div>
+          <button onclick="orderNow('TENDERS TACO')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">YUMMY</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">500 / 600 DA</span>
+          </div>
+          <button onclick="orderNow('YUMMY TACO')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">THE KING</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">500 / 600 DA</span>
+          </div>
+          <button onclick="orderNow('THE KING TACO')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">HAPPY</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">500 / 600 DA</span>
+          </div>
+          <button onclick="orderNow('HAPPY TACO')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">MIXTO MIXTE</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">450 / 550 DA</span>
+          </div>
+          <button onclick="orderNow('MIXTO MIXTE TACO')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">MIXTO FROMAGE</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">500 / 600 DA</span>
+          </div>
+          <button onclick="orderNow('MIXTO FROMAGE TACO')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+      </div>
+
+      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="font-bold text-gray-800">Gratiné (Extra fromage)</h4>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">150 DA</span>
+          </div>
+          <button onclick="orderNow('Gratiné (Extra fromage)')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="font-bold text-gray-800">Soujouk poulet</h4>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">100 DA</span>
+          </div>
+          <button onclick="orderNow('Soujouk poulet')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="font-bold text-gray-800">Soujouk viande</h4>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">100 DA</span>
+          </div>
+          <button onclick="orderNow('Soujouk viande')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="font-bold text-gray-800">Onion crispy</h4>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">50 DA</span>
+          </div>
+          <button onclick="orderNow('Onion crispy')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNATURES -->
+    <div class="mb-20">
+      <div class="flex items-center space-x-4 mb-8">
+        <h2 class="text-3xl font-black text-gray-900">⭐️ SIGNATURES BY MR YUMMY</h2>
+        <div class="flex-1 h-px bg-yellow-400"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">CRISPS</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">650 DA</span>
+          </div>
+          <button onclick="orderNow('CRISPS')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">VEGI</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">650 DA</span>
+          </div>
+          <button onclick="orderNow('VEGI')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-red-600">TOKYUM CRUNCH</h3>
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">650 DA</span>
+          </div>
+          <button onclick="orderNow('TOKYUM CRUNCH')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SANDWICHES & BOX -->
+    <div class="mb-20">
+      <div class="flex items-center space-x-4 mb-8">
+        <h2 class="text-3xl font-black text-gray-900">🥪 SANDWICHES & BOX</h2>
+        <div class="flex-1 h-px bg-yellow-400"></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">TWISTER WRAP</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">500 DA</span></div>
+          <button onclick="orderNow('TWISTER WRAP')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">MEXICAN CHICKEN</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">500 DA</span></div>
+          <button onclick="orderNow('MEXICAN CHICKEN')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">TWISTER BOX</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">790 DA</span></div>
+          <button onclick="orderNow('TWISTER BOX')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">TACO BOX</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">790 DA</span></div>
+          <button onclick="orderNow('TACO BOX')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">HAPPY BOX</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">1290 DA</span></div>
+          <button onclick="orderNow('HAPPY BOX')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">HAPPY TENDERS</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">1600 DA</span></div>
+          <button onclick="orderNow('HAPPY TENDERS')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">MENU KIDS</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">450 DA</span></div>
+          <button onclick="orderNow('MENU KIDS')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BROASTED CHICKEN MEALS -->
+    <div class="mb-20">
+      <div class="flex items-center space-x-4 mb-8">
+        <h2 class="text-3xl font-black text-gray-900">🍗 BROASTED CHICKEN MEALS</h2>
+        <div class="flex-1 h-px bg-yellow-400"></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">TENDERS MEAL</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">750 DA</span></div>
+          <button onclick="orderNow('TENDERS MEAL')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">CHILI LIME MEAL</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">750 DA</span></div>
+          <button onclick="orderNow('CHILI LIME MEAL')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">BONELESS MEAL</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">750 DA</span></div>
+          <button onclick="orderNow('BONELESS MEAL')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">SMART MEAL</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">790 DA</span></div>
+          <button onclick="orderNow('SMART MEAL')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">3 PCS BROASTED</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">300 DA</span></div>
+          <button onclick="orderNow('3 PCS BROASTED')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">7 PCS BROASTED</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">600 DA</span></div>
+          <button onclick="orderNow('7 PCS BROASTED')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">SUPER MEGA DEAL</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">1600 DA</span></div>
+          <button onclick="orderNow('SUPER MEGA DEAL')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">DREAM BOX</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">1550 DA</span></div>
+          <button onclick="orderNow('DREAM BOX')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">FAMILY MEAL COMBO</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">3100 DA</span></div>
+          <button onclick="orderNow('FAMILY MEAL COMBO')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRILLED CHICKEN MEALS -->
+    <div class="mb-20">
+      <div class="flex items-center space-x-4 mb-8">
+        <h2 class="text-3xl font-black text-gray-900">🍗 GRILLED CHICKEN MEALS</h2>
+        <div class="flex-1 h-px bg-yellow-400"></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">MINGS MEAL</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">750 DA</span></div>
+          <button onclick="orderNow('MINGS MEAL')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">3 PCS PERI PERI</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">300 DA</span></div>
+          <button onclick="orderNow('3 PCS PERI PERI')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">2 PCS PERI PERI</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">700 DA</span></div>
+          <button onclick="orderNow('2 PCS PERI PERI')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">MIXTE BOURAK</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">790 DA</span></div>
+          <button onclick="orderNow('MIXTE BOURAK')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">5 PCS BOURAK</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">500 DA</span></div>
+          <button onclick="orderNow('5 PCS BOURAK')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">10 PCS BOURAK</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">950 DA</span></div>
+          <button onclick="orderNow('10 PCS BOURAK')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">FRIENDSHIP MEAL</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">1390 DA</span></div>
+          <button onclick="orderNow('FRIENDSHIP MEAL')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">HAPPY WINGS</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">1290 DA</span></div>
+          <button onclick="orderNow('HAPPY WINGS')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">FAMILY MEAL COMBO (Grill)</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">3100 DA</span></div>
+          <button onclick="orderNow('FAMILY MEAL COMBO (Grill)')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h3 class="text-xl font-bold text-red-600">MIXTE FAMILY COMBO</h3><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">3250 DA</span></div>
+          <button onclick="orderNow('MIXTE FAMILY COMBO')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXTRAS -->
+    <div class="mb-20">
+      <div class="flex items-center space-x-4 mb-8">
+        <h2 class="text-3xl font-black text-gray-900">➕ EXTRAS</h2>
+        <div class="flex-1 h-px bg-yellow-400"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h4 class="font-bold">Poulet</h4><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">100 DA</span></div>
+          <button onclick="orderNow('Poulet (Extra)')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h4 class="font-bold">Ailes grillées</h4><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">550 DA</span></div>
+          <button onclick="orderNow('Ailes grillées (Extra)')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h4 class="font-bold">Coleslaw</h4><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">150 DA</span></div>
+          <button onclick="orderNow('Coleslaw (Extra)')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h4 class="font-bold">Fromage (Jben)</h4><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">200 DA</span></div>
+          <button onclick="orderNow('Fromage (Jben) (Extra)')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h4 class="font-bold">Poulet haché</h4><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">50 DA</span></div>
+          <button onclick="orderNow('Poulet haché (Extra)')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h4 class="font-bold">4 Tenders</h4><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">550 DA</span></div>
+          <button onclick="orderNow('4 Tenders (Extra)')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h4 class="font-bold">Frites</h4><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">100 DA</span></div>
+          <button onclick="orderNow('Frites (Extra)')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIZZA - Sauce Tomate -->
+    <div class="mb-20">
+      <div class="flex items-center space-x-4 mb-8">
+        <h2 class="text-3xl font-black text-gray-900">🍕 PIZZA - Sauce Tomate</h2>
+        <div class="flex-1 h-px bg-yellow-400"></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Margherita</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 350 | XL 650 | XXL 900 DA</span>
+            <button onclick="orderNow('Margherita Pizza')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Viande hachée</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 550 | XL 1100 | XXL 1500 DA</span>
+            <button onclick="orderNow('Viande hachée Pizza')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Poulet</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 550 | XL 1050 | XXL 1450 DA</span>
+            <button onclick="orderNow('Poulet Pizza')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Merguez</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 550 | XL 1100 | XXL 1500 DA</span>
+            <button onclick="orderNow('Merguez Pizza')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Végétarienne</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 500 | XL 950 | XXL 1350 DA</span>
+            <button onclick="orderNow('Végétarienne Pizza')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Thon</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 600 | XL 1200 | XXL 1600 DA</span>
+            <button onclick="orderNow('Thon Pizza')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">3 Fromages</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 650 | XL 1200 | XXL 1600 DA</span>
+            <button onclick="orderNow('3 Fromages Pizza')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Poulet fumé</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 650 | XL 1200 | XXL 1600 DA</span>
+            <button onclick="orderNow('Poulet fumé Pizza')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Zinger</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 600 | XL 1150 | XXL 1600 DA</span>
+            <button onclick="orderNow('Zinger Pizza')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Regina</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 750 | XL 1400 | XXL 1750 DA</span>
+            <button onclick="orderNow('Regina Pizza')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIZZA - Crème Fraîche -->
+    <div class="mb-20">
+      <div class="flex items-center space-x-4 mb-8">
+        <h2 class="text-3xl font-black text-gray-900">🥛 PIZZA - Crème Fraîche</h2>
+        <div class="flex-1 h-px bg-yellow-400"></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Margherita</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 400 | XL 750 | XXL 950 DA</span>
+            <button onclick="orderNow('Margherita Pizza (Crème)')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Viande hachée</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 600 | XL 1150 | XXL 1600 DA</span>
+            <button onclick="orderNow('Viande hachée Pizza (Crème)')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Poulet</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 600 | XL 1150 | XXL 1600 DA</span>
+            <button onclick="orderNow('Poulet Pizza (Crème)')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Merguez</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 600 | XL 1150 | XXL 1600 DA</span>
+            <button onclick="orderNow('Merguez Pizza (Crème)')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">4 Fromages</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 700 | XL 1350 | XXL 1800 DA</span>
+            <button onclick="orderNow('4 Fromages Pizza (Crème)')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Poulet fumé</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 700 | XL 1350 | XXL 1700 DA</span>
+            <button onclick="orderNow('Poulet fumé Pizza (Crème)')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Zinger</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 650 | XL 1250 | XXL 1700 DA</span>
+            <button onclick="orderNow('Zinger Pizza (Crème)')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Panaché 1</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 600 | XL 1150 | XXL 1650 DA</span>
+            <button onclick="orderNow('Panaché 1 Pizza (Crème)')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Panaché 2</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 600 | XL 1150 | XXL 1650 DA</span>
+            <button onclick="orderNow('Panaché 2 Pizza (Crème)')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Regina</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 800 | XL 1500 | XXL 1850 DA</span>
+            <button onclick="orderNow('Regina Pizza (Crème)')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <h3 class="font-bold">Pizza Yummy</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">L 850 | XL 1550 | XXL 1950 DA</span>
+            <button onclick="orderNow('Pizza Yummy (Crème)')" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg">ORDER NOW</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXTRAS PIZZA -->
+    <div class="mb-20">
+      <div class="flex items-center space-x-4 mb-8">
+        <h2 class="text-3xl font-black text-gray-900">Extras Pizza</h2>
+        <div class="flex-1 h-px bg-yellow-400"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h4 class="font-bold">Champignons</h4><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">200 DA</span></div>
+          <button onclick="orderNow('Champignons (Pizza Extra)')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+          <div class="flex justify-between items-start mb-2"><h4 class="font-bold">Soujouk</h4><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-lg font-black text-sm">250 DA</span></div>
+          <button onclick="orderNow('Soujouk (Pizza Extra)')" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg">ORDER NOW</button>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+    <!-- OFFERS -->
+    <section class="mt-24 pt-16 border-t border-gray-200">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-black text-red-600 uppercase">OUR SPECIAL OFFERS</h2>
+        <p class="text-gray-600 mt-2">More flavor, less price</p>
+        <div class="w-24 h-1 bg-yellow-400 mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-red-600 text-white rounded-3xl p-8 flex items-center space-x-6 shadow-2xl relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-400/20 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform"></div>
+          <div class="bg-white/20 w-16 h-16 rounded-2xl flex items-center justify-center shrink-0">
+            <i class="fas fa-id-card text-3xl text-yellow-400"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-black mb-1">🎟 Fidelity Card</h3>
+            <p class="text-red-50 opacity-90">50 points = 500 DA discount on your next order!</p>
+          </div>
+        </div>
+
+        <div class="bg-red-600 text-white rounded-3xl p-8 flex items-center space-x-6 shadow-2xl relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-400/20 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform"></div>
+          <div class="bg-white/20 w-16 h-16 rounded-2xl flex items-center justify-center shrink-0">
+            <i class="fas fa-graduation-cap text-3xl text-yellow-400"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-black mb-1">🎓 Student Discount</h3>
+            <p class="text-red-50 opacity-90">Show your student ID and get 15% OFF every meal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="min-h-screen bg-gray-50 py-20 px-4">
+  <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border-t-8 border-red-600 p-8 md:p-12">
+    <div class="text-center mb-10">
+      <h1 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+        🍔 Mr Yummy – <span class="text-red-600">Batna's Flavor Hub</span> 🍟
+      </h1>
+      <div class="w-24 h-1 bg-yellow-400 mx-auto"></div>
+    </div>
+
+    <div class="text-gray-700 text-lg leading-loose">
+      <p class="mb-6 font-medium text-xl text-red-600 text-center">
+        Welcome to Mr Yummy, where every bite tells a story! 
+      </p>
+      <p class="mb-6 text-center">
+        Nestled in the heart of Batna, Mr Yummy is more than just a fast-food spot — it's a flavor destination for burger lovers, food adventurers, and anyone craving bold, unforgettable tastes. 
+      </p>
+      <p class="mb-6 text-center">
+        At Mr Yummy, we take classic favorites and elevate them with juicy smash burgers, crispy fries, rich sauces, and handcrafted recipes that make every meal feel like a celebration. Whether you're grabbing a quick lunch, enjoying dinner with friends, or treating yourself after a long day, we serve up freshness, quality, and flavor with a smile.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8 mt-12 mb-12">
+        <div class="bg-red-50 p-6 rounded-2xl border-l-4 border-red-600">
+          <h3 class="text-xl font-black text-red-700 mb-4">✨ Why choose Mr Yummy?</h3>
+          <ul class="space-y-3 font-bold text-gray-800">
+            <li class="flex items-center space-x-2">
+              <span class="text-yellow-500">🍔</span>
+              <span>Mouth-watering burgers with signature twists</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="text-yellow-500">🌯</span>
+              <span>Flavor-packed tacos, pizzas & sides</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="text-yellow-500">🥤</span>
+              <span>Refreshing drinks to pair with every meal</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="text-yellow-500">🚀</span>
+              <span>Fast service & great vibes</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-yellow-50 p-6 rounded-2xl border-l-4 border-yellow-400 text-center">
+          <p class="text-3xl mb-2">📍</p>
+          <h3 class="text-xl font-black text-red-700 mb-4">Two Locations</h3>
+          <p class="font-semibold text-gray-800">Find us in Batna!</p>
+          <p class="text-sm text-gray-600 mt-2">
+            Open daily • Fresh food • Quick service • Great atmosphere
+          </p>
+          <a href="https://wa.me/213676818999" target="_blank" class="inline-block mt-4 bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-2 rounded-lg transition-all">
+            <i class="fab fa-whatsapp"></i> Order Now
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-red-600 to-yellow-500 text-white rounded-2xl p-8 text-center">
+        <h3 class="text-2xl font-black mb-4">Ready to experience the flavor?</h3>
+        <p class="mb-6">Call, message, or visit us for an unforgettable meal!</p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <a href="tel:+213676818999" class="bg-white text-red-600 font-bold px-6 py-3 rounded-lg hover:bg-yellow-400 transition-all">
+            <i class="fas fa-phone"></i> Call: +213 676 81 89 99
+          </a>
+          <a href="https://wa.me/213676818999" target="_blank" class="bg-green-500 text-white font-bold px-6 py-3 rounded-lg hover:bg-green-600 transition-all">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-red-800 text-white py-12">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <!-- Brand Section -->
+      <div class="text-center md:text-left">
+        <h2 class="text-3xl font-black mb-2">MR <span class="text-yellow-400">YUMMY</span></h2>
+        <p class="opacity-80">
+          Fast, fresh, and full of fun in every bite. The best fast food experience in Batna!
+        </p>
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="text-center">
+        <h3 class="text-xl font-bold mb-4">FOLLOW US</h3>
+        <div class="flex justify-center space-x-4 text-3xl">
+          <a href="https://www.instagram.com/mr_yummy_batna/" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-400 transition-colors">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/mryummybatna/" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-400 transition-colors">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://wa.me/213676818999" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-400 transition-colors">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="text-center md:text-right">
+        <h3 class="text-xl font-bold mb-4">CONTACT US</h3>
+        <div class="space-y-2">
+          <p class="flex items-center justify-center md:justify-end space-x-2">
+            <i class="fas fa-phone text-yellow-400"></i>
+            <span>+213 676 81 89 99</span>
+          </p>
+          <p class="flex items-center justify-center md:justify-end space-x-2">
+            <i class="fas fa-map-marker-alt text-yellow-400"></i>
+            <span>Batna, Algeria</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-red-700 pt-8">
+      <p class="text-center text-xs opacity-70">
+        &copy; 2025 MR Yummy Batna. All rights reserved. 
+        <br/> Crafted with passion for food lovers.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('hidden');
+}
+
+function orderNow(itemName) {
+  const phoneNumber = '213676818999';
+  const message = encodeURIComponent(`Hello Mr Yummy! I would like to order: ${itemName}`);
+  window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+}
+</script>
+
+</body>
+</html>

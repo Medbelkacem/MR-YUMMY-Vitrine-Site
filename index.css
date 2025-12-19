@@ -1,0 +1,121 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Scrollbar Styles */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Utility Classes */
+.red-gradient-overlay {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.7) 0%, rgba(255, 255, 255, 0.3) 100%);
+}
+
+/* Ensure hero video stays inside the hero section and doesn't overlay following sections */
+.hero-video {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none; /* let clicks through to controls/links */
+}
+
+/* Give content sections a higher stacking context than the video */
+section, .section { position: relative; z-index: 5; }
+
+/* Collage horizontal row */
+.collage-row {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+  -webkit-overflow-scrolling: touch;
+}
+.collage-row::-webkit-scrollbar { height: 8px; }
+.collage-row::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 999px; }
+.collage-row img {
+  flex: 0 0 auto;
+  width: 320px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .collage-row img { width: 240px; height: 180px; }
+}
+
+/* Featured first-four row: full-width, centered thumbnails */
+.featured-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.featured-row img {
+  width: calc(25% - 0.75rem);
+  max-width: 220px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.featured-row img:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 14px 28px rgba(0,0,0,0.12); }
+
+@media (max-width: 768px) {
+  .featured-row img { width: calc(50% - 0.75rem); height: 140px; }
+}
+
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Text */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}

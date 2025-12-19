@@ -1,0 +1,8 @@
+
+{
+  "name": "MR Yummy - Fast Food",
+  "description": "Welcome to Mr Yummy – Batna’s go-to spot for juicy burgers, tasty tacos, and bold flavors. Fast, fresh, and full of fun in every bite!",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
